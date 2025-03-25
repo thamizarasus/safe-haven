@@ -17,7 +17,7 @@
 - ### Website Scope:
   - South Cutoff: San Jose
   - North Cutoff: Richmond, Concord
-  - <img width="563" alt="image" src="https://github.com/user-attachments/assets/45723a07-e7c4-4df5-b2a3-7c8f2e681af3" />
+  - ![image](https://github.com/user-attachments/assets/4169a428-58a8-49df-8f34-05448791e27f)
 - ### Features:
   - Map & Search (Google Maps API)
   - Location Based Search (Postgre(SQL) with PostGIS extension)
