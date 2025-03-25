@@ -1,0 +1,29 @@
+# Donor Match
+---
+## SF Hacks 2025
+- ### What is Donor Match?
+  - Donor Match is a web application that allows donors to see which safehouses or aid organizations can use donations and essential supplies: food, clothing, medicine (OTC and first aid only), and to allow potentially endangered persons (ie. homeless, disaster victims) to locate safe houses and aid organizations.
+- ### Collaborators:
+  - Ramanuja Mohanty
+  - Thamizarasu Sankara
+  - David Lei
+  - Robert Ace Gonzalez
+- ### Tech Stack:
+  - Frontend: HTML-CSS-Javascript (Vue.js)
+  - Backend: Node & Express.js
+  - Database: Postgre(SQL)
+  - API: Undecided
+  - Website Deployment Space: Amazon Web Service (AWS)
+- ### Website Scope:
+  - South Cutoff: San Jose
+  - North Cutoff: Richmond, Concord
+  - <img width="563" alt="image" src="https://github.com/user-attachments/assets/45723a07-e7c4-4df5-b2a3-7c8f2e681af3" />
+- ### Features:
+  - Map & Search (Google Maps API)
+  - Location Based Search (Postgre(SQL) with PostGIS extension)
+  - User Input
+    - Sign In/Out/Up
+  - Data Tracking
+    - Donation Tracking
+    - Safehouse Tracking
+    - Hotspots (Critical Locations)
