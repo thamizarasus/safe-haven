@@ -1,13 +1,12 @@
-# Donor Match
+# Safe-Haven
 ---
 ## SF Hacks 2025
 - ### What is Donor Match?
-  - Donor Match is a web application that allows donors to see which safehouses or aid organizations can use donations and essential supplies: food, clothing, medicine (OTC and first aid only), and to allow potentially endangered persons (ie. homeless, disaster victims) to locate safe houses and aid organizations.
+  - Safe-Haven is a web application that allows donors to see which safehouses or aid organizations can use donations and essential supplies: food, clothing, medicine (OTC and first aid only), and to allow potentially endangered persons (ie. homeless, disaster victims) to locate safe houses and aid organizations.
 - ### Collaborators:
-  - Ramanuja Mohanty
   - Thamizarasu Sankara
   - David Lei
-  - Robert Ace Gonzalez
+  - Hill Kalathiya
 - ### Tech Stack:
   - Frontend: HTML-CSS-Javascript (Vue.js)
   - Backend: Node & Express.js
@@ -20,6 +19,7 @@
   - ![image](https://github.com/user-attachments/assets/4169a428-58a8-49df-8f34-05448791e27f)
 - ### Features:
   - Map & Search (Google Maps API)
+  - Chat (Gemini API)
   - Location Based Search (Postgre(SQL) with PostGIS extension)
   - User Input
     - Sign In/Out/Up
