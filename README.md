@@ -7,6 +7,7 @@
   - Thamizarasu Sankara
   - David Lei
   - Hill Kalathiya
+  - Harry Kakadiya
 - ### Tech Stack:
   - Frontend: HTML-CSS-Javascript (Vue.js)
   - Backend: Node & Express.js
