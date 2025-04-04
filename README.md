@@ -1,7 +1,7 @@
 # Safe-Haven
 ---
 ## SF Hacks 2025
-- ### What is Donor Match?
+- ### What is Safe Haven?
   - Safe-Haven is a web application that allows donors to see which safehouses or aid organizations can use donations and essential supplies: food, clothing, medicine (OTC and first aid only), and to allow potentially endangered persons (ie. homeless, disaster victims) to locate safe houses and aid organizations.
 - ### Collaborators:
   - Thamizarasu Sankara
