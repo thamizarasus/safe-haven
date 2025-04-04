@@ -28,3 +28,6 @@
     - Donation Tracking
     - Safehouse Tracking
     - Hotspots (Critical Locations)
+- ### Server
+- node server.js
+- http://localhost:3000
