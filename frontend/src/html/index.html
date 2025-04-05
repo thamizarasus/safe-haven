@@ -42,44 +42,56 @@
   </div>
 
   <!-- FRAME 4: DONATION FORM -->
-  <div id="donation-form" class="donation-section">
+  <form method="post" action="/api/donators/" id="donation-form" class="donation-section">
     <div class="donation-card">
       <h2>Want to help?</h2>
 
       <h4 class="section-label">Personal Info:</h4>
       <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Your name" />
+      <input name="name" type="text" id="name" placeholder="Your name" />
 
       <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="you@example.com" />
+      <input name="email" type="email" id="email" placeholder="you@example.com" />
 
       <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" placeholder="(123) 456-7890" />
+      <input name="phone number" type="tel" id="phone" placeholder="(123) 456-7890" />
 
       <h4 class="section-label">Donation Type:</h4>
-      <label><input type="checkbox" /> Food</label>
-      <label><input type="checkbox" /> Clothes</label>
-      <label><input type="checkbox" /> Toys</label>
 
-      <label>
-        <input type="checkbox" id="creditOption" onchange="toggleCardDetails()" /> Credit / Debit
-      </label>
+      <fieldset>
+        <div class="checkbox-field">
+          <input name="food" type="checkbox" value="Food"/>
+          <label for="food">Food</label>
+        </div>
+        <div class="checkbox-field">
+          <input name="clothes" type="checkbox" value="Clothes"/>
+          <label for="food">Clothes</label>
+        </div>
+        <div class="checkbox-field">
+          <input name="toys" type="checkbox" value="Toys"/>
+          <label for="food">Toys</label>
+        </div>
+        <div class="checkbox-field">
+          <input name="card" type="checkbox" id="creditOption" onchange="toggleCardDetails()" />
+          <label for="card">Credit / Debit</label>
+        </div>
+      </fieldset>
 
       <div id="cardDetails" style="display: none; margin-top: 10px;">
         <label for="cardNumber">Card Number:</label>
-        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" />
+        <input name="cardNumbertype=" type="text" id="cardNumber" placeholder="1234 5678 9012 3456" />
 
         <label for="expiry">Expiry Date:</label>
-        <input type="text" id="expiry" placeholder="MM/YY" />
+        <input name="expiry" type="text" id="expiry" placeholder="MM/YY" />
 
         <label for="cvv">CVV:</label>
-        <input type="text" id="cvv" placeholder="123" />
+        <input name="cvv" type="text" id="cvv" placeholder="123" />
       </div>
 
-      <label>Others: <input type="text" style="width: 60%" /></label>
+      <label>Others: <input name="others" type="text" style="width: 60%" /></label>
 
       <h4 class="section-label">Choose an Organization:</h4>
-      <select>
+      <select name="organization">
         <option disabled selected>Select...</option>
         <option>Safe Haven Oakland</option>
         <option>Hope SF</option>
@@ -88,7 +100,7 @@
 
       <button type="submit">Submit</button>
     </div>
-  </div>
+  </form>
 
   <!-- JS FILE -->
   <script src="../script.js"></script>

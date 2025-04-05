@@ -196,6 +196,14 @@ nav a:hover {
   background-color: #45a049;
 }
 
+fieldset {
+  border: none;
+}
+
+.checkbox-field {
+  display: flex;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .mission-section,
