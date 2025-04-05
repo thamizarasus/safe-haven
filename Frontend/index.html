@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Safe-Haven</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+      border-bottom: 1px solid #ccc;
+      padding: 20px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: darkred;
+    }
+
+    nav a.active {
+      color: red;
+      font-weight: bold;
+    }
+
+    .hero {
+      height: 500px;
+      background-image: url('../donationapp.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(80%);
+    }
+  </style>
+</head>
 <body>
-<!--Blank Page-->
+
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="#">Mission Statement</a>
+    <a href="#">Donations</a>
+    <a href="#">FAQ</a>
+  </nav>
+
+  <div class="hero"></div>
 
 </body>
-</head>
 </html>
-
