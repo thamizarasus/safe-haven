@@ -4,7 +4,7 @@ const cors = require('cors');
 const donationRoutes = require('./routes/donationRoutes');
 
 require('dotenv').config();
-const pool = require('./backend/models/db'); // ← this uses your db.js
+const pool = require('./models/db'); // ← this uses your db.js
 
 const app = express();
 

@@ -1,4 +1,4 @@
-const pool = require('./backend/models/db');
+const pool = require('../models/db');
 
 exports.getAllDonations = async (req, res) => {
   try {
