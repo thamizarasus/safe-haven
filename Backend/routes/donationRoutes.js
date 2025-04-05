@@ -8,5 +8,9 @@ router.get('/', donationController.getAllDonations);
 // POST /api/donations
 router.post('/', donationController.createDonation);
 
+// Dashboard view
+router.get('/summary', donationController.getSummary);
+
+
 
 module.exports = router;

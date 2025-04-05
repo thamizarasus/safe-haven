@@ -44,3 +44,21 @@ exports.createDonation = async (req, res) => {
   }
 };
 
+exports.getSummary = async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT 
+        (SELECT COUNT(*) FROM Donation) AS total_donations,
+        (SELECT COALESCE(SUM(quantity), 0) FROM Donation) AS total_items_donated,
+        (SELECT COUNT(DISTINCT donator_id) FROM Donation) AS unique_donators,
+        (SELECT COUNT(*) FROM Organization) AS total_organizations
+    `);
+
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error('Error fetching summary:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+
