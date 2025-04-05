@@ -41,7 +41,7 @@ nav a:hover {
 /* FRAME 1: HERO */
 .hero {
   height: 650px;
-  background-image: url('../../images/donationapp.jpg');
+  background-image: url('/images/donationapp.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
