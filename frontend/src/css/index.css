@@ -204,6 +204,55 @@ fieldset {
   display: flex;
 }
 
+/* FAQ SECTION */
+.faq-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+  outline: none;
+  color: #333;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 15px 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.faq-question.active + .faq-answer {
+  display: block;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .mission-section,
