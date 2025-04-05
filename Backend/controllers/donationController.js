@@ -23,3 +23,24 @@ exports.getAllDonations = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
+
+exports.createDonation = async (req, res) => {
+  const { donator_id, item_type_id, money, quantity, aid_organization_id } = req.body;
+
+  try {
+    const result = await pool.query(
+      `INSERT INTO Donation (donator_id, item_type_id, money, quantity, aid_organization_id)
+       VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+      [donator_id, item_type_id, money || null, quantity || null, aid_organization_id]
+    );
+
+    res.status(201).json({
+      message: 'Donation successfully recorded!',
+      donation: result.rows[0],
+    });
+  } catch (err) {
+    console.error('Error inserting donation:', err);
+    res.status(500).json({ error: 'Could not create donation' });
+  }
+};
+
