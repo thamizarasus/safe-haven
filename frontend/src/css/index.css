@@ -40,7 +40,7 @@
   /* HERO SECTION */
   .hero {
     height: 650px;
-    background-image: url('../donationapp.jpg');
+    background-image: url('/frontend/images/donationapp.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@
   
   .mission-image {
     flex: 1;
-    background-image: url('../imag2.jpeg');
+    background-image: url('/frontend/images/imag2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
