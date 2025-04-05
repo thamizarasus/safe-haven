@@ -1,5 +1,7 @@
 const pool = require('../models/db');
+const { validationResult } = require('express-validator');
 
+// GET /api/donations
 exports.getAllDonations = async (req, res) => {
   try {
     const result = await pool.query(`
@@ -24,7 +26,16 @@ exports.getAllDonations = async (req, res) => {
   }
 };
 
+// POST /api/donations
 exports.createDonation = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      message: 'Validation failed',
+      errors: errors.array()
+    });
+  }
+
   const { donator_id, item_type_id, money, quantity, aid_organization_id } = req.body;
 
   try {
@@ -44,6 +55,7 @@ exports.createDonation = async (req, res) => {
   }
 };
 
+// GET /api/donations/summary
 exports.getSummary = async (req, res) => {
   try {
     const result = await pool.query(`
@@ -60,5 +72,3 @@ exports.getSummary = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-
-
