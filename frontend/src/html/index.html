@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Safe-Haven</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="../css/index.css" />
 </head>
 <body>
 
@@ -12,16 +12,13 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#mission">Mission Statement</a>
-    <a href="#donations">Donations</a>
+    <a href="#donation-form">Donations</a>
     <a href="#faq">FAQ</a>
   </nav>
 
-  <!-- FRAME 1: HERO IMAGE -->
-  <div id="slideshow" class="hero-slideshow">
-    <img class="slide active" src="/images/slide1.jpg" alt="Slide 1">
-    <img class="slide" src="/images/slide2.jpg" alt="Slide 2">
-    <img class="slide" src="/images/slide3.jpg" alt="Slide 3">
-  </div>
+  <!-- FRAME 1: HERO SECTION -->
+  <div id="home" class="hero"></div>
+
   <!-- FRAME 2: MISSION SECTION -->
   <div id="mission" class="mission-section">
     <div class="mission-text">
@@ -33,5 +30,67 @@
     <div class="mission-image"></div>
   </div>
 
+  <!-- FRAME 3: PROJECTED AREA MAP SECTION -->
+  <div id="map-section" class="map-section">
+    <div class="map-image">
+      <div class="map-heading">Projected Area</div>
+      <img src="../../images/scope.png" alt="Service Area Map" />
+    </div>
+    <div class="map-text">
+      <p>Join Us in Making<br />an Impact—<strong>Donate.</strong></p>
+    </div>
+  </div>
+
+  <!-- FRAME 4: DONATION FORM -->
+  <div id="donation-form" class="donation-section">
+    <div class="donation-card">
+      <h2>Want to help?</h2>
+
+      <h4 class="section-label">Personal Info:</h4>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your name" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="you@example.com" />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="(123) 456-7890" />
+
+      <h4 class="section-label">Donation Type:</h4>
+      <label><input type="checkbox" /> Food</label>
+      <label><input type="checkbox" /> Clothes</label>
+      <label><input type="checkbox" /> Toys</label>
+
+      <label>
+        <input type="checkbox" id="creditOption" onchange="toggleCardDetails()" /> Credit / Debit
+      </label>
+
+      <div id="cardDetails" style="display: none; margin-top: 10px;">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" />
+
+        <label for="expiry">Expiry Date:</label>
+        <input type="text" id="expiry" placeholder="MM/YY" />
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="123" />
+      </div>
+
+      <label>Others: <input type="text" style="width: 60%" /></label>
+
+      <h4 class="section-label">Choose an Organization:</h4>
+      <select>
+        <option disabled selected>Select...</option>
+        <option>Safe Haven Oakland</option>
+        <option>Hope SF</option>
+        <option>Richmond Relief</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+
+  <!-- JS FILE -->
+  <script src="../../script.js"></script>
 </body>
 </html>

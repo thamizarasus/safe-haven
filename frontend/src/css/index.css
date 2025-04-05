@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,31 +38,17 @@ nav a:hover {
   color: darkred;
 }
 
-/* HERO SLIDESHOW */
-.hero-slideshow {
-  position: relative;
+/* FRAME 1: HERO */
+.hero {
   height: 650px;
-  overflow: hidden;
+  background-image: url('../../images/donationapp.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(80%);
 }
 
-.hero-slideshow .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
-
-.hero-slideshow .slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* MISSION SECTION */
+/* FRAME 2: MISSION */
 .mission-section {
   display: flex;
   width: 100%;
@@ -77,7 +63,6 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  height: 100%;
 }
 
 .mission-text p {
@@ -88,25 +73,150 @@ nav a:hover {
 
 .mission-image {
   flex: 1;
-  background-image: url('/images/imag2.jpeg'); /* ✅ Fixed path */
+  background-image: url('../../images/imag2.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
 }
 
-/* RESPONSIVE DESIGN */
+/* FRAME 3: MAP SECTION */
+.map-section {
+  display: flex;
+  width: 100%;
+}
+
+.map-image {
+  flex: 7;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.map-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-heading {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background-color: rgba(76, 175, 80, 0.85);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 6px;
+  z-index: 2;
+  text-shadow: 1px 1px 2px black;
+}
+
+.map-text {
+  flex: 3;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* FRAME 4: DONATION FORM */
+.donation-section {
+  background-color: #66cc66;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.donation-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.donation-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section-label {
+  color: #219653;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.donation-card label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+.donation-card input[type="text"],
+.donation-card input[type="email"],
+.donation-card input[type="tel"],
+.donation-card select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.donation-card input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.donation-card button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.donation-card button:hover {
+  background-color: #45a049;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .mission-section {
+  .mission-section,
+  .map-section {
     flex-direction: column;
     height: auto;
   }
 
-  .mission-image {
-    height: 300px;
+  .mission-image,
+  .map-image {
+    height: auto;
   }
 
-  .hero-slideshow {
+  .hero {
     height: 400px;
+  }
+
+  .map-heading {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 20px 0;
   }
 }
