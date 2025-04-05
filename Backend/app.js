@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const donationRoutes = require('./routes/donationRoutes');
 const organizationRoutes = require('./routes/organizationRoutes');
+const donatorRoutes = require('./routes/donatorRoutes');
+
 
 
 require('dotenv').config();
@@ -14,6 +16,8 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/donations', donationRoutes);
 app.use('/api/organizations', organizationRoutes);
+app.use('/api/donators', donatorRoutes);
+
 
 
 // Simple route to test API
