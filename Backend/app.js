@@ -1,6 +1,8 @@
 // app.js
 const express = require('express');
 const cors = require('cors');
+const donationRoutes = require('./routes/donationRoutes');
+
 require('dotenv').config();
 const pool = require('./backend/models/db'); // ← this uses your db.js
 
@@ -8,6 +10,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/donations', donationRoutes);
 
 // Simple route to test API
 app.get('/', (req, res) => {
