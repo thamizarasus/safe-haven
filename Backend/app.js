@@ -20,7 +20,6 @@ app.use(express.static(path.join(__dirname, '../frontend/src')));
 // API Routes
 app.use('/api/donations', donationRoutes);
 app.use('/api/organizations', organizationRoutes);
-app.use('/api/donators', donatorRoutes);
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.send('🚀 Safe Haven backend is running!');
@@ -44,6 +43,11 @@ app.post('/auth/login', urlencodedParser, (req, res) => {
       res.sendFile(path.join(__dirname, '../frontend/src/html/index-signed-in.html'));
     }
   });
+});
+
+app.post('/donators', urlencodedParser, (req, res) => {
+  pool.query(`INSERT INTO donors VALUES ('${req.body.name}', '${req.body.email}', '${req.body["phone number"]}', '${req.body.food}', '${req.body.clothes}', '${req.body.toys}', '${req.body.card}', '${req.body.cardNumber}', '${req.body.expiry}', '${req.body.cvv}', '${req.body.organization}');`);
+  res.sendFile(path.join(__dirname, '../frontend/src/html/index.html'));
 });
 
 app.listen(4000, () => {
