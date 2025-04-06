@@ -25,7 +25,15 @@ nav {
 }
 .nav-left {
   display: flex;
-  gap: 20px;
+  font-size: 50px;
+  gap: 45px;
+}
+
+.nav-title {
+  color: #4CAF50;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .nav-right {
