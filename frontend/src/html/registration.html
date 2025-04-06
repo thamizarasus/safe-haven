@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Safe-Haven</title>
+  <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Create an Account</h2>
+    <form class="login-form" method="POST" action="/api/auth/register">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required />
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password" required />
+
+      <button type="submit">Register</button>
+
+      <p class="login-link">
+        Already have an account? <a href="/html/login.html">Login here</a>
+      </p>
+    </form>
+  </div>
+</body>
+</html>
