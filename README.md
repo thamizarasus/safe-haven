@@ -9,7 +9,7 @@
   - Hill Kalathiya
   - Harry Kakadiya
 - ### Tech Stack:
-  - Frontend: HTML-CSS-Javascript (Vue.js)
+  - Frontend: HTML-CSS-Javascript
   - Backend: Node & Express.js
   - Database: Postgre(SQL)
   - API: Gemini API & Vertext API
