@@ -13,11 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("bgMusic");
 
   function enableMusic() {
+    music.volume = 0.5;
     music.play().catch(e => console.warn("Autoplay failed:", e));
+
+    document.removeEventListener("click", enableMusic);
     window.removeEventListener("scroll", enableMusic);
     window.removeEventListener("touchstart", enableMusic);
   }
 
+  // Play music on first click
+  document.addEventListener("click", enableMusic);
   window.addEventListener("scroll", enableMusic);
   window.addEventListener("touchstart", enableMusic);
 
