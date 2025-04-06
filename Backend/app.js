@@ -36,6 +36,11 @@ app.post('/auth/register', urlencodedParser, (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/src/html/index.html'));
 });
 
+app.post('/auth/login', urlencodedParser, (req, res) => {
+  pool.query(`SELECT name from donators WHERE password='${req.body.password}';`);
+  res.sendFile(path.join(__dirname, '../frontend/src/html/index.html'));
+});
+
 app.listen(4000, () => {
   console.log(`💎 Server started! Running on http://localhost:4000/`);
 });
