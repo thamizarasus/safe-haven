@@ -61,15 +61,26 @@ document.getElementById("chat-input").addEventListener("keypress", function (e) 
   const response = await fetch(`/api/gemini-chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: userMessage }] }]
-    })
+    body: JSON.stringify({ message: userMessage })
   });
 
   const data = await response.json();
   console.log("Gemini response:", data);
   
-  const aiReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn’t understand.";
+  const aiReply = data?.reply || "Sorry, I couldn’t understand.";
+
+  if (
+    data &&
+    data.candidates &&
+    data.candidates[0] &&
+    data.candidates[0].content &&
+    data.candidates[0].content.parts &&
+    data.candidates[0].content.parts[0] &&
+    data.candidates[0].content.parts[0].text
+  ) {
+    aiReply = data.candidates[0].content.parts[0].text;
+  }
+  
   appendMessage("AI", aiReply);
 });
 
