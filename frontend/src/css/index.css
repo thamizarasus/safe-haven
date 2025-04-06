@@ -31,7 +31,7 @@ nav {
 
 .nav-title {
   color: #4CAF50;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   margin: 0;
 }
@@ -467,13 +467,19 @@ fieldset {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  font-size: 24px;
+  font-size: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+#chatbot-toggle:hover {
+  background: #388E3C;
 }
 
 #chat-popup {
@@ -488,16 +494,18 @@ fieldset {
   flex-direction: column;
   z-index: 1001;
   overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 #chat-header {
   padding: 12px;
   background: #4CAF50;
   color: white;
+  font-size: 16px;
   font-weight: bold;
+  text-align: center;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  text-align: center;
 }
 
 #chat-messages {
@@ -506,11 +514,14 @@ fieldset {
   overflow-y: auto;
   font-size: 14px;
   background: #f9f9f9;
+  line-height: 1.6;
 }
 
 #chat-input {
   border: none;
   padding: 10px;
+  font-size: 14px;
+  outline: none;
   width: 100%;
   box-sizing: border-box;
   border-top: 1px solid #ddd;
@@ -520,14 +531,23 @@ fieldset {
   background: #4CAF50;
   color: white;
   border: none;
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
+  font-size: 16px;
   cursor: pointer;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: background-color 0.3s ease;
 }
 
 #send-btn:hover {
   background-color: #388E3C;
+}
+
+#chat-messages div {
+  margin-bottom: 8px;
+}
+
+#chat-messages strong {
+  color: #333;
 }
 

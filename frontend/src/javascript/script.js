@@ -50,6 +50,14 @@ document.getElementById("send-btn").addEventListener("click", async () => {
   appendMessage("You", userMessage);
   input.value = "";
 
+  // Also allow Enter key to send message
+document.getElementById("chat-input").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault(); // Prevent form submission if in a form
+    document.getElementById("send-btn").click(); // Trigger the send button click
+  }
+});
+
   const response = await fetch(`https://generativelanguage.googleapis.com/v1beta1/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
