@@ -5,9 +5,21 @@ function toggleCardDetails() {
   cardDetails.style.display = checkbox.checked ? 'block' : 'none';
 }
 
-// FAQ toggle logic
+
 document.addEventListener("DOMContentLoaded", () => {
   const questions = document.querySelectorAll(".faq-question");
+
+  // 🎵 Music Autoplay on Scroll
+  const music = document.getElementById("bgMusic");
+
+  function enableMusic() {
+    music.play().catch(e => console.warn("Autoplay failed:", e));
+    window.removeEventListener("scroll", enableMusic);
+    window.removeEventListener("touchstart", enableMusic);
+  }
+
+  window.addEventListener("scroll", enableMusic);
+  window.addEventListener("touchstart", enableMusic);
 
   questions.forEach(q => {
     q.addEventListener("click", () => {
