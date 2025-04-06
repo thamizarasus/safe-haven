@@ -10,22 +10,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const questions = document.querySelectorAll(".faq-question");
 
   // 🎵 Music Autoplay on Scroll
-  const music = document.getElementById("bgMusic");
+  const audio = new Audio("/audio/Ordinary-Person.mp3");
+  audio.loop = true;
+  audio.volume = 0.5;
 
-  function enableMusic() {
-    music.volume = 0.5;
-    music.play().catch(e => console.warn("Autoplay failed:", e));
+  function setupAudio() {
+    const playPromise = audio.play();
 
-    document.removeEventListener("click", enableMusic);
-    window.removeEventListener("scroll", enableMusic);
-    window.removeEventListener("touchstart", enableMusic);
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        console.log("✅ Music started on first click");
+      }).catch(error => {
+        console.warn("🚫 Auto-play was prevented:", error);
+        // Optional: Show a play button or notice here
+      });
+    }
+
+    // Remove listener after first trigger
+    window.removeEventListener("click", setupAudio);
   }
 
-  // Play music on first click
-  document.addEventListener("click", enableMusic);
-  window.addEventListener("scroll", enableMusic);
-  window.addEventListener("touchstart", enableMusic);
-
+  // Play music on first click anywhere on page
+  window.addEventListener("click", setupAudio, { once: true });
+  
   questions.forEach(q => {
     q.addEventListener("click", () => {
       q.classList.toggle("active");
