@@ -25,5 +25,5 @@
   - Data Tracking
     - Donations
 - ### Server
-- node app.js
 - When you clone our repo, you can change the PGPORT, PGHOST, PGPASSWORD, PGDATABASE, etc. environment variables to your own PostGresSQL values, depending on whatever port, host, password, and database name you have on your system. This ensures that the database will be set up properly.
+- Run the command 'node app.js' with the Backend folder as the current directory 
