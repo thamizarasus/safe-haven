@@ -13,7 +13,7 @@ pool.connect((err, client, release) => {
 });
 
 async function createTable() {
-  pool.query("CREATE TABLE IF NOT EXISTS donators (name varchar(100), email varchar(100), password varchar(100));");
+  pool.query("CREATE TABLE IF NOT EXISTS users (name varchar(100), email varchar(100), password varchar(100));");
 }
 
 createTable();

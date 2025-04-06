@@ -32,12 +32,12 @@ app.get('/', (req, res) => {
 });
 
 app.post('/auth/register', urlencodedParser, (req, res) => {
-  pool.query(`INSERT INTO donators VALUES ('${req.body.name}', '${req.body.email}', '${req.body.password}');`);
+  pool.query(`INSERT INTO users VALUES ('${req.body.name}', '${req.body.email}', '${req.body.password}');`);
   res.sendFile(path.join(__dirname, '../frontend/src/html/index-signed-in.html'));
 });
 
 app.post('/auth/login', urlencodedParser, (req, res) => {
-  pool.query(`SELECT name from donators WHERE password='${req.body.password}';`).then((result) => {
+  pool.query(`SELECT name from users WHERE password='${req.body.password}' AND username='${req.body.username}';`).then((result) => {
     if (result.rows.length == 0) {
       res.sendFile(path.join(__dirname, '../frontend/src/html/login-fail.html'));
     } else {
