@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname, '../frontend/src')));
 app.use('/api/donations', donationRoutes);
 app.use('/api/organizations', organizationRoutes);
 app.use('/api/donators', donatorRoutes);
-
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.send('🚀 Safe Haven backend is running!');
@@ -30,7 +29,4 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/src/html/index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🌐 Server listening on http://localhost:${PORT}`);
-});
+app.listen(4000);
