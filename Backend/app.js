@@ -37,7 +37,7 @@ app.post('/auth/register', urlencodedParser, (req, res) => {
 });
 
 app.post('/auth/login', urlencodedParser, (req, res) => {
-  pool.query(`SELECT name from users WHERE password='${req.body.password}' AND username='${req.body.username}';`).then((result) => {
+  pool.query(`SELECT name FROM users WHERE password='${req.body.password}' AND email='${req.body.email}';`).then((result) => {
     if (result.rows.length == 0) {
       res.sendFile(path.join(__dirname, '../frontend/src/html/login-fail.html'));
     } else {
