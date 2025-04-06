@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe-Haven</title>
+  <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-left">
+      <a href="#home">Home</a>
+      <a href="#mission">Mission Statement</a>
+      <a href="#donation-form">Donations</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+    </div>
+    
+    <div class="title">
+      <h1 class= "nav-title" > Safe   Haven </h1>
+    </div>
+
+    <div class="nav-right">
+      <a href="../html/index.html" class="sign-out-button">Sign Out</a>
+    </div>
+    
+  </nav>
+
+  <!-- FRAME 1: HERO SECTION -->
+  <div id="home" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="../images/slide1.jpg" style="width:100%">
+      <div class="text">Safe Haven - Serving with Compassion</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="../images/slide2.jpg" style="width:100%">
+      <div class="text">Connect. Contribute. Care.</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="../images/slide3.jpg" style="width:100%">
+      <div class="text">Be the Reason Someone Smiles Today</div>
+    </div>
+  
+    <!-- Navigation buttons -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <!-- FRAME 2: MISSION SECTION -->
+  <div id="mission" class="mission-section">
+    <div class="mission-text">
+      <p>
+        Connecting generosity with need—Safe Haven helps direct essential donations to local safehouses,
+        ensuring critical support reaches those who need it most.
+      </p>
+    </div>
+    <div class="mission-image"></div>
+  </div>
+
+  <!-- FRAME 3: PROJECTED AREA MAP SECTION -->
+  <div id="map-section" class="map-section">
+    <div class="map-image">
+      <div class="map-heading">Projected Area</div>
+      <img src="../../images/scope.png" alt="Service Area Map" />
+    </div>
+    <div class="map-text">
+      <p>Join Us in Making<br />an Impact—<strong>Donate.</strong></p>
+    </div>
+  </div>
+
+  <!-- FRAME 4: DONATION FORM -->
+  <form method="post" action="/api/donators/" id="donation-form" class="donation-section">
+    <div class="donation-card">
+      <h2>Want to help?</h2>
+
+      <h4 class="section-label">Personal Info:</h4>
+      <label for="name">Name:</label>
+      <input name="name" type="text" id="name" placeholder="Your name" />
+
+      <label for="email">Email:</label>
+      <input name="email" type="email" id="email" placeholder="you@example.com" />
+
+      <label for="phone">Phone Number:</label>
+      <input name="phone number" type="tel" id="phone" placeholder="(123) 456-7890" />
+
+      <h4 class="section-label">Donation Type:</h4>
+
+      <fieldset>
+        <div class="checkbox-field">
+          <input name="food" type="checkbox" value="Food"/>
+          <label for="food">Food</label>
+        </div>
+        <div class="checkbox-field">
+          <input name="clothes" type="checkbox" value="Clothes"/>
+          <label for="food">Clothes</label>
+        </div>
+        <div class="checkbox-field">
+          <input name="toys" type="checkbox" value="Toys"/>
+          <label for="food">Toys</label>
+        </div>
+        <div class="checkbox-field">
+          <input name="card" type="checkbox" id="creditOption" onchange="toggleCardDetails()" />
+          <label for="card">Credit / Debit</label>
+        </div>
+      </fieldset>
+
+      <div id="cardDetails" style="display: none; margin-top: 10px;">
+        <label for="cardNumber">Card Number:</label>
+        <input name="cardNumbertype=" type="text" id="cardNumber" placeholder="1234 5678 9012 3456" />
+
+        <label for="expiry">Expiry Date:</label>
+        <input name="expiry" type="text" id="expiry" placeholder="MM/YY" />
+
+        <label for="cvv">CVV:</label>
+        <input name="cvv" type="text" id="cvv" placeholder="123" />
+      </div>
+
+      <label>Others: <input name="others" type="text" style="width: 60%" /></label>
+
+      <h4 class="section-label">Choose an Organization:</h4>
+      <select name="organization">
+        <option disabled selected>Select...</option>
+        <option>Safe Haven Oakland</option>
+        <option>Hope SF</option>
+        <option>Richmond Relief</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <!-- FRAME X: ABOUT SECTION -->
+<div id="about" class="about-section">
+  <div class="about-container">
+    <h2>About Safe Haven</h2>
+    <p>
+      Safe Haven is a community-led platform built to connect people with compassion to those in need. Whether it's food,
+      clothing, or first aid, our mission is to ensure that donations reach local safehouses and support networks in real time.
+    </p>
+    <p>
+      Founded during a university hackathon, our team came together to create more than an app—we built a bridge between generosity and survival.
+      We're committed to maintaining transparency, empathy, and continuous innovation.
+    </p>
+
+    <div class="author-card">
+      <img src="../images/Hill Gibli.png" alt="Hill Kalathiya in Studio Ghibli style" class="author-image" />
+      <p class="author-name">Hill Kalathiya</p>
+    </div>
+  <div class="author-card">
+    <img src="../images/Thamizarasu Sankara.png" alt="Thamizarasu Sankara in Studio Ghibli style" class="author-image" />
+    <p class="author-name">Thamizarasu Sankara</p>
+  </div>
+<div class="author-card">
+  <img src="../images/David Lei.png" alt="David Lei in Studio Ghibli style" class="author-image" />
+  <p class="author-name">David Lei</p>
+</div>
+  </div>
+</div>
+
+  
+
+
+  <!-- FRAME 5: FAQ SECTION -->
+<div id="faq" class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question">What is Safe-Haven?</button>
+      <div class="faq-answer">Safe-Haven connects donors with verified aid organizations and safehouses that need essential supplies.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">What can I donate?</button>
+      <div class="faq-answer">You can donate food, clothing, toys, first-aid supplies, or contribute through a secure credit/debit payment.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How are donations delivered?</button>
+      <div class="faq-answer">Our platform coordinates directly with local safehouses and partner services to ensure timely delivery.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Is my donation tax-deductible?</button>
+      <div class="faq-answer">Many donations are eligible for tax deductions depending on the recipient organization. Please consult your tax advisor.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can I track my donation?</button>
+      <div class="faq-answer">Tracking will be available soon. Currently, you will receive a confirmation and recipient info after submission.</div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- JS FILE -->
+  <script src="../javascript/script.js"></script>
+</body>
+</html>
