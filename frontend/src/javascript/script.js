@@ -32,6 +32,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Play music on first click anywhere on page
   window.addEventListener("click", setupAudio, { once: true });
+
+  const GEMINI_API_KEY = "AIzaSyDRnyJnCxZCrxPQVpBVUsyMSMlYjW9DgMM";
+
+  // Toggle chatbot popup
+document.getElementById("chatbot-toggle").addEventListener("click", () => {
+  const popup = document.getElementById("chat-popup");
+  popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+});
+
+// Handle sending message
+document.getElementById("send-btn").addEventListener("click", async () => {
+  const input = document.getElementById("chat-input");
+  const userMessage = input.value.trim();
+  if (!userMessage) return;
+
+  appendMessage("You", userMessage);
+  input.value = "";
+
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta1/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: userMessage }] }]
+    })
+  });
+
+  const data = await response.json();
+  const aiReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn’t understand.";
+  appendMessage("AI", aiReply);
+});
+
+function appendMessage(sender, message) {
+  const chat = document.getElementById("chat-messages");
+  const div = document.createElement("div");
+  div.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
   
   questions.forEach(q => {
     q.addEventListener("click", () => {
