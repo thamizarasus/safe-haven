@@ -12,22 +12,17 @@
   - Frontend: HTML-CSS-Javascript (Vue.js)
   - Backend: Node & Express.js
   - Database: Postgre(SQL)
-  - API: Undecided
+  - API: Gemini API & Vertext API
   - Website Deployment Space: Amazon Web Service (AWS)
 - ### Website Scope:
   - South Cutoff: San Jose
   - North Cutoff: Richmond, Concord
   - ![image](https://github.com/user-attachments/assets/4169a428-58a8-49df-8f34-05448791e27f)
 - ### Features:
-  - Map & Search (Google Maps API)
   - Chat (Gemini API)
-  - Location Based Search (Postgre(SQL) with PostGIS extension)
   - User Input
     - Sign In/Out/Up
   - Data Tracking
-    - Donation Tracking
-    - Safehouse Tracking
-    - Hotspots (Critical Locations)
+    - Donations
 - ### Server
-- node server.js
-- http://localhost:3000
+- node app.js
