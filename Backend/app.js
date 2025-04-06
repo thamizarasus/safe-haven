@@ -50,6 +50,11 @@ app.post('/donators', urlencodedParser, (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/src/html/index.html'));
 });
 
+app.post('/donators-signed-in', urlencodedParser, (req, res) => {
+  pool.query(`INSERT INTO donors VALUES ('${req.body.name}', '${req.body.email}', '${req.body["phone number"]}', '${req.body.food}', '${req.body.clothes}', '${req.body.toys}', '${req.body.card}', '${req.body.cardNumber}', '${req.body.expiry}', '${req.body.cvv}', '${req.body.organization}');`);
+  res.sendFile(path.join(__dirname, '../frontend/src/html/index-signed-in.html'));
+});
+
 app.listen(4000, () => {
   console.log(`💎 Server started! Running on http://localhost:4000/`);
 });
