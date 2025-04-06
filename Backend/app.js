@@ -32,5 +32,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log(`Server started! Running on http://localhost:4000/`);
+  console.log(`💎 Server started! Running on http://localhost:4000/`);
 });
