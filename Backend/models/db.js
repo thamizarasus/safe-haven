@@ -12,4 +12,10 @@ pool.connect((err, client, release) => {
   release();
 });
 
+async function createTable() {
+  pool.query("CREATE TABLE IF NOT EXISTS donators (name varchar(100), email varchar(100), password varchar(100));");
+}
+
+createTable();
+
 module.exports = pool;
