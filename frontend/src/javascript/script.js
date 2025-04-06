@@ -67,6 +67,8 @@ document.getElementById("chat-input").addEventListener("keypress", function (e) 
   });
 
   const data = await response.json();
+  console.log("Gemini response:", data);
+  
   const aiReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn’t understand.";
   appendMessage("AI", aiReply);
 });
